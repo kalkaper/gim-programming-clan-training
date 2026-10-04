@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cqmmhpk7dvsuk"]
+
+[ext_resource type="Script" uid="uid://da7vn7ovgb0wp" path="res://player_3d.gd" id="1_5wjm4"]
+[ext_resource type="Texture2D" uid="uid://cblu0g6bnhdmo" path="res://textures/marble.jpg" id="2_3swsy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_texture = ExtResource("2_3swsy")
+
+[sub_resource type="SphereMesh" id="SphereMesh_3n4ta"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5wjm4"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nh4y8"]
+
+[node name="Player3D" type="CharacterBody3D" unique_id=1505543977]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+script = ExtResource("1_5wjm4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=98758349]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_ig7tw")
+mesh = SubResource("SphereMesh_3n4ta")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1335567895]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+shape = SubResource("SphereShape3D_5wjm4")
+
+[node name="CameraPivot" type="Node3D" parent="." unique_id=300867791]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.8660254, 0.5, 0, -0.5, 0.8660254, 0, 0, 0)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="CameraPivot" unique_id=1498887335]
+shape = SubResource("SphereShape3D_nh4y8")
+spring_length = 10.0
+margin = 0.001
+
+[node name="Camera3D" type="Camera3D" parent="CameraPivot/SpringArm3D" unique_id=1163071267]
+unique_name_in_owner = true
+transform = Transform3D(4.9999995, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 10)

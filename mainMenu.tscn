@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bhalhxf7bg4gk"]
+
+[ext_resource type="Script" uid="uid://dmtt2gklu6nao" path="res://main_menu.gd" id="1_wut1r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nh4y8"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xi7yt"]
+bg_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.29411766, 0.43137255, 1, 0.28235295)
+shadow_size = 4
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_83s16"]
+bg_color = Color(0.29411766, 0.43137255, 1, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 4
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wut1r"]
+bg_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_color = Color(0.29411766, 0.43137255, 1, 0.6)
+shadow_size = 4
+shadow_offset = Vector2(0, 4)
+
+[node name="MainMenu" type="Control" unique_id=827976474]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wut1r")
+
+[node name="Panel" type="Panel" parent="." unique_id=1355492129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_nh4y8")
+
+[node name="Title" type="Label" parent="." unique_id=147873229]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -44.0
+offset_right = 44.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 96
+text = "Main Menu"
+
+[node name="Button" type="Button" parent="." unique_id=486211697]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -127.5
+offset_top = -55.5
+offset_right = 127.5
+offset_bottom = 55.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.29411766, 0.43137255, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.047058824, 0.047058824, 0.047058824, 1)
+theme_override_colors/font_hover_color = Color(0.29411766, 0.43137255, 1, 1)
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_xi7yt")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_83s16")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wut1r")
+text = "Start Game"
+
+[connection signal="pressed" from="Button" to="." method="_on_start_pressed"]

@@ -1,6 +1,6 @@
 # GIM Apprenticeship 2026 Programming Clan Training
-Halo, dunia!
+Halo, dunia! \
 Repositori ini berisi _source code_ gim untuk Clan Training Programming. Saat ini memang masih terlihat baru, tetapi akan disempurnakan ke depannya.
 
-Nama: Kalif Kai Permadi
+Nama: Kalif Kai Permadi \
 ID Aviator: 179
